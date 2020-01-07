@@ -6,7 +6,7 @@ def getInput():
         if(inp.isdigit()):
             inputs.append(int(inp))
             getInput()
-        else:
+        else: # handles non-digit inputs
             print(inp + " is an invalid entry... Enter a number or leave blank and press Return to quit.")
             getInput()
 
