@@ -1,5 +1,6 @@
 matrixOne = []
 matrixTwo = []
+matrixResult = []
 
 def getMatrixOne():
     print('Enter a matrix a row at a time. End with a blank line.')
@@ -51,6 +52,24 @@ def validLen(matrixNum, rowLen): # makes sure every row is the same length
     else:
         print('System error, "MATRIX NUMBER", line 52.')
 
+def multiply():
+    if (len(matrixOne[0]) == len(matrixTwo)):
+        print('They can be multiplied.')
+        for rowOfOne in range(len(matrixOne)):
+            row = []
+            for colOfTwo in range(len(matrixTwo[0])):
+                result = 0
+                for rowOfTwo in range(len(matrixTwo)):
+                    result += int(matrixOne[rowOfOne][rowOfTwo]) * int(matrixTwo[rowOfTwo][colOfTwo])
+                row.append(result)
+            matrixResult.append(row)
+        for row in range(len(matrixResult)):
+            for col in range(len(matrixResult[0])):
+                print(matrixResult[row][col], end='\t')
+            print('\n', end='')
+    else:
+        print('The first matrix must contain the same amount of columns as the second matrix has rows.')
+
 getMatrixOne()
 getMatrixTwo()
-print(matrixOne, matrixTwo)
+multiply()
