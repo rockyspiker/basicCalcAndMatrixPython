@@ -22,6 +22,12 @@ def getInput(matrixNum):
         if (isValid and validLen(matrixNum, len(row))):
             if (matrixNum == 1):
                 matrixOne.append(row)
+                getInput(matrixNum)
+            elif (matrixNum == 2):
+                matrixTwo.append(row)
+                getInput(matrixNum)
+            else:
+                print('System error, "MATRIX NUMBER", line 30.')
 
 def validLen(matrixNum, rowLen): # makes sure every row is the same length
     if (matrixNum == 1):
@@ -30,7 +36,7 @@ def validLen(matrixNum, rowLen): # makes sure every row is the same length
         elif (len(matrixOne[0]) == rowLen):
             return True
         else:
-            print('All rows must be the same length.')
+            print('All rows must be the same length. Please restart this row.')
             getInput(matrixNum)
             return False
     elif (matrixNum == 2):
@@ -39,9 +45,12 @@ def validLen(matrixNum, rowLen): # makes sure every row is the same length
         elif (len(matrixTwo[0]) == rowLen):
             return True
         else:
-            print('All rows must be the same length.')
+            print('All rows must be the same length. Please restart this row.')
             getInput(matrixNum)
             return False
     else:
-        print('System error, "MATRIX NUMBER", line 46.')
-        
+        print('System error, "MATRIX NUMBER", line 52.')
+
+getMatrixOne()
+getMatrixTwo()
+print(matrixOne, matrixTwo)
