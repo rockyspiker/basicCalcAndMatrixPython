@@ -54,7 +54,6 @@ def validLen(matrixNum, rowLen): # makes sure every row is the same length
 
 def multiply():
     if (len(matrixOne[0]) == len(matrixTwo)):
-        matrixResult.sort()
         for rowOfOne in range(len(matrixOne)): # loop for every row in matrixOne
             row = []
             for colOfTwo in range(len(matrixTwo[0])): # loop for every col in matrixTwo
